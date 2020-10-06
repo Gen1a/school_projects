@@ -1,0 +1,16 @@
+#contacten select{
+    width: 400px;
+}
+
+#contactInformatie{
+    width: 400px;
+}
+
+#contactInformatie div{
+    display: table-row;
+}
+
+#contactInformatie label, input{
+    display: table-cell;
+    margin: 10px;
+}

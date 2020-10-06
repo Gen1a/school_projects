@@ -1,0 +1,33 @@
+html, body {
+	margin:0px;
+}
+
+h3 {
+    margin-left: 20px;
+}
+
+img {
+    position: absolute;
+}
+
+.startScreen {
+    text-align: center;
+}
+
+#btnStart {
+    display: block;
+    width: 85%;
+    font-size: xx-large;
+    box-shadow: 2px 2px 5px 0px #969696;
+    border-width: 1px;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 10px 0;
+}
+
+#playfield {
+    position:relative;
+	border:solid 1px black;
+	box-sizing:border-box; /* anders krijgen we scrollbars omdat het element door de border net te groot wordt */
+}
+

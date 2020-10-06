@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles/index.css"> <!-- CSS bestand inladen -->
+        <script src="scripts/index.js" type="text/javascript"></script> <!-- JavaScript bestand inladen (bij grote hoeveelheden JavaScript idealiter op einde body) -->
+        <title>Opdracht Colorpicker</title>
+    </head>
+    <body>
+    <section class="colorPicker">
+        <div class="components">
+            <div class="component">
+                <span>0<input
+                  type="range"
+                  id="sldRed"
+                  class="slider"
+                  value="128"
+                  min="0"
+                  max="255"/>255
+                </span>
+                <span>Red</span>
+                <span id="lblRed">0</span>
+            </div>
+            <div class="component">
+                <span>0<input
+                  type="range"
+                  id="sldGreen"
+                  class="slider"
+                  value="255"
+                  min="0"
+                  max="255"/>255
+                </span>
+                <span>Green</span>
+                <span id="lblGreen">0</span>
+            </div>
+            <div class="component">
+                <span>0<input
+                  type="range"
+                  id="sldBlue"
+                  class="slider"
+                  value="128"
+                  min="0"
+                  max="255"/>255
+                </span>
+                <span>Blue</span>
+                <span id="lblBlue">0</span>
+            </div>
+        </div>
+        <div class="swatch" id="swatch"></div>
+        <input type="button" id="btnSave" value="Save"/>
+    </section>
+    <section id="swatchComponents"></section>
+    <p>Dit is de geavanceerde colorpicker met Save- en Delete-functie voor kleuren.</p>
+    </body>
+</html>
