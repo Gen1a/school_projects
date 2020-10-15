@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>Opdracht Contact Manager jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/script.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div id="contacten">
+        <select size="10">
+        </select>
+        <button id="btnNieuw">Nieuw</button>
+    </div>
+    <div id="contactInformatie">
+        <!-- Gebruik van form element om makkelijk te kunnen resetten met reset()-->
+        <form>
+            <div>
+                <label for="voornaam">Voornaam</label>
+                <input type="text" name="voornaam">
+            </div>
+            <div>
+                <label for="familienaam">Familienaam</label>
+                <input type="text" name="familienaam">
+            </div>
+            <div>
+                <label for="geboorteDatum">Geboortedatum</label>
+                <input type="text" name="geboorteDatum" placeholder="YYYY-MM-DD">
+            </div>
+            <div>
+                <label for="email">E-mail</label>
+                <input type="email" name="email" placeholder="name@example.com">
+            </div>
+            <div>
+                <label for="aantalKinderen">Aantal kinderen</label>
+                <input type="number" name="aantalKinderen">
+            </div>
+            <!-- type="button" gebruiken zodat form niet gesubmit wordt -->
+            <button id="btnBewaar" type="button">Bewaar</button>
+        </form>
+    </div>
+</body>
+</html>
