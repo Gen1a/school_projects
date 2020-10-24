@@ -1,0 +1,13 @@
+C:\Users\frede\source\repos\Graduaat\Programmeren\WinkelEvents\WinkelEvents\bin\Debug\netcoreapp3.1\WinkelEvents.exe
+C:\Users\frede\source\repos\Graduaat\Programmeren\WinkelEvents\WinkelEvents\bin\Debug\netcoreapp3.1\WinkelEvents.deps.json
+C:\Users\frede\source\repos\Graduaat\Programmeren\WinkelEvents\WinkelEvents\bin\Debug\netcoreapp3.1\WinkelEvents.runtimeconfig.json
+C:\Users\frede\source\repos\Graduaat\Programmeren\WinkelEvents\WinkelEvents\bin\Debug\netcoreapp3.1\WinkelEvents.runtimeconfig.dev.json
+C:\Users\frede\source\repos\Graduaat\Programmeren\WinkelEvents\WinkelEvents\bin\Debug\netcoreapp3.1\WinkelEvents.dll
+C:\Users\frede\source\repos\Graduaat\Programmeren\WinkelEvents\WinkelEvents\bin\Debug\netcoreapp3.1\WinkelEvents.pdb
+C:\Users\frede\source\repos\Graduaat\Programmeren\WinkelEvents\WinkelEvents\obj\Debug\netcoreapp3.1\WinkelEvents.csprojAssemblyReference.cache
+C:\Users\frede\source\repos\Graduaat\Programmeren\WinkelEvents\WinkelEvents\obj\Debug\netcoreapp3.1\WinkelEvents.AssemblyInfoInputs.cache
+C:\Users\frede\source\repos\Graduaat\Programmeren\WinkelEvents\WinkelEvents\obj\Debug\netcoreapp3.1\WinkelEvents.AssemblyInfo.cs
+C:\Users\frede\source\repos\Graduaat\Programmeren\WinkelEvents\WinkelEvents\obj\Debug\netcoreapp3.1\WinkelEvents.csproj.CoreCompileInputs.cache
+C:\Users\frede\source\repos\Graduaat\Programmeren\WinkelEvents\WinkelEvents\obj\Debug\netcoreapp3.1\WinkelEvents.dll
+C:\Users\frede\source\repos\Graduaat\Programmeren\WinkelEvents\WinkelEvents\obj\Debug\netcoreapp3.1\WinkelEvents.pdb
+C:\Users\frede\source\repos\Graduaat\Programmeren\WinkelEvents\WinkelEvents\obj\Debug\netcoreapp3.1\WinkelEvents.genruntimeconfig.cache
