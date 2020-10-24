@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "GO5.Scheepvaart.Business.ConsoleApp/1.0.0": {
+        "dependencies": {
+          "GO5.Scheepvaart.Business": "1.0.0"
+        },
+        "runtime": {
+          "GO5.Scheepvaart.Business.ConsoleApp.dll": {}
+        }
+      },
+      "GO5.Scheepvaart.Business/1.0.0": {
+        "runtime": {
+          "GO5.Scheepvaart.Business.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GO5.Scheepvaart.Business.ConsoleApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GO5.Scheepvaart.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

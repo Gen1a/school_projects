@@ -1,0 +1,16 @@
+C:\Users\frede\source\repos\Graduaat\Programmeren\GO5.Scheepvaart.Business\GO5.Scheepvaart.Business.ConsoleApp\bin\Debug\netcoreapp3.1\GO5.Scheepvaart.Business.ConsoleApp.exe
+C:\Users\frede\source\repos\Graduaat\Programmeren\GO5.Scheepvaart.Business\GO5.Scheepvaart.Business.ConsoleApp\bin\Debug\netcoreapp3.1\GO5.Scheepvaart.Business.ConsoleApp.deps.json
+C:\Users\frede\source\repos\Graduaat\Programmeren\GO5.Scheepvaart.Business\GO5.Scheepvaart.Business.ConsoleApp\bin\Debug\netcoreapp3.1\GO5.Scheepvaart.Business.ConsoleApp.runtimeconfig.json
+C:\Users\frede\source\repos\Graduaat\Programmeren\GO5.Scheepvaart.Business\GO5.Scheepvaart.Business.ConsoleApp\bin\Debug\netcoreapp3.1\GO5.Scheepvaart.Business.ConsoleApp.runtimeconfig.dev.json
+C:\Users\frede\source\repos\Graduaat\Programmeren\GO5.Scheepvaart.Business\GO5.Scheepvaart.Business.ConsoleApp\bin\Debug\netcoreapp3.1\GO5.Scheepvaart.Business.ConsoleApp.dll
+C:\Users\frede\source\repos\Graduaat\Programmeren\GO5.Scheepvaart.Business\GO5.Scheepvaart.Business.ConsoleApp\bin\Debug\netcoreapp3.1\GO5.Scheepvaart.Business.ConsoleApp.pdb
+C:\Users\frede\source\repos\Graduaat\Programmeren\GO5.Scheepvaart.Business\GO5.Scheepvaart.Business.ConsoleApp\bin\Debug\netcoreapp3.1\GO5.Scheepvaart.Business.dll
+C:\Users\frede\source\repos\Graduaat\Programmeren\GO5.Scheepvaart.Business\GO5.Scheepvaart.Business.ConsoleApp\bin\Debug\netcoreapp3.1\GO5.Scheepvaart.Business.pdb
+C:\Users\frede\source\repos\Graduaat\Programmeren\GO5.Scheepvaart.Business\GO5.Scheepvaart.Business.ConsoleApp\obj\Debug\netcoreapp3.1\GO5.Scheepvaart.Business.ConsoleApp.csprojAssemblyReference.cache
+C:\Users\frede\source\repos\Graduaat\Programmeren\GO5.Scheepvaart.Business\GO5.Scheepvaart.Business.ConsoleApp\obj\Debug\netcoreapp3.1\GO5.Scheepvaart.Business.ConsoleApp.AssemblyInfoInputs.cache
+C:\Users\frede\source\repos\Graduaat\Programmeren\GO5.Scheepvaart.Business\GO5.Scheepvaart.Business.ConsoleApp\obj\Debug\netcoreapp3.1\GO5.Scheepvaart.Business.ConsoleApp.AssemblyInfo.cs
+C:\Users\frede\source\repos\Graduaat\Programmeren\GO5.Scheepvaart.Business\GO5.Scheepvaart.Business.ConsoleApp\obj\Debug\netcoreapp3.1\GO5.Scheepvaart.Business.ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\frede\source\repos\Graduaat\Programmeren\GO5.Scheepvaart.Business\GO5.Scheepvaart.Business.ConsoleApp\obj\Debug\netcoreapp3.1\GO5.Scheepvaart.Business.ConsoleApp.csproj.CopyComplete
+C:\Users\frede\source\repos\Graduaat\Programmeren\GO5.Scheepvaart.Business\GO5.Scheepvaart.Business.ConsoleApp\obj\Debug\netcoreapp3.1\GO5.Scheepvaart.Business.ConsoleApp.dll
+C:\Users\frede\source\repos\Graduaat\Programmeren\GO5.Scheepvaart.Business\GO5.Scheepvaart.Business.ConsoleApp\obj\Debug\netcoreapp3.1\GO5.Scheepvaart.Business.ConsoleApp.pdb
+C:\Users\frede\source\repos\Graduaat\Programmeren\GO5.Scheepvaart.Business\GO5.Scheepvaart.Business.ConsoleApp\obj\Debug\netcoreapp3.1\GO5.Scheepvaart.Business.ConsoleApp.genruntimeconfig.cache
