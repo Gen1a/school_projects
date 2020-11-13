@@ -1,0 +1,14 @@
+{
+  "name": "opdracht_nodejs",
+  "version": "1.0.0",
+  "description": "Simpele NodeJS webserver opzetten + Gebruik Core module Filesystem",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Frederik De Brouwer",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
