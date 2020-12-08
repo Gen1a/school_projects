@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600");
+
+body {
+  margin: 10px;
+  background-color: rgb(54, 54, 54);
+  color: rgb(228, 228, 228);
+  font-family: "Raleway", Arial;
+}
+
+h1 {
+  text-align: center;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+span {
+  font-style: italic;
+  font-weight: bold;
+}
+
+button {
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 15px;
+  margin-right: 20px;
+}
+
+button:hover {
+  transform: scale(0.95);
+}
+
+button.success{
+  background-color: green;
+}
+
+button.neutral{
+  background-color: gray;
+}
+
+button.error{
+  background-color: red;
+}
