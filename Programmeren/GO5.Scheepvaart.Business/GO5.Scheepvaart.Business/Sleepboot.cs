@@ -1,5 +1,4 @@
-﻿
-namespace GO5.Scheepvaart.Business
+﻿namespace GO5.Scheepvaart.Business
 {
     public class Sleepboot : Schip
     {

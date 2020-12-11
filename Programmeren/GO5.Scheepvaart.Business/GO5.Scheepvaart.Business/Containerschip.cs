@@ -1,4 +1,4 @@
-﻿using System;
+﻿using GO5.Scheepvaart.Business.Exceptions;
 
 namespace GO5.Scheepvaart.Business
 {
@@ -8,7 +8,8 @@ namespace GO5.Scheepvaart.Business
         public Containerschip(string naam, double lengte, double breedte, double tonnage, int aantalContainers, decimal cargowaarde) :
             base(naam, lengte, breedte, tonnage, cargowaarde)
         {
-            if (aantalContainers < 0) throw new ArgumentOutOfRangeException("Aantal containers moet groter dan of gelijk aan 0 zijn.");
+            if (aantalContainers < 0) throw new SchipException("Aantal containers moet groter dan of gelijk aan 0 zijn.");
             AantalContainers = aantalContainers;
         }
     }
+}

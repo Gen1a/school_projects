@@ -1,4 +1,4 @@
-﻿using System;
+﻿using GO5.Scheepvaart.Business.Exceptions;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -6,12 +6,12 @@ namespace GO5.Scheepvaart.Business
 {
     public class Vloot : IEnumerable<Schip>
     {
-        private Dictionary<string, Schip> _schepen;
+        private Dictionary<string, Schip> _schepen; // Dict: zoekperformantie + uniek
         public string Naam { get; set; }
 
         public Vloot(string naam)
         {
-            if (naam == "") throw new ArgumentException("Naam van een vloot moet minstens 1 letter bevatten.");
+            if (naam == "") throw new VlootException("Naam van een vloot moet minstens 1 letter bevatten.");
             Naam = naam;
             _schepen = new Dictionary<string, Schip>();
         }
@@ -27,14 +27,14 @@ namespace GO5.Scheepvaart.Business
         }
         public void VoegSchipToe(Schip schip)
         {
-            if (_schepen.ContainsKey(schip.Naam)) throw new ArgumentOutOfRangeException("Schip is reeds aanwezig in de vloot.");
+            if (_schepen.ContainsKey(schip.Naam)) throw new VlootException("Schip is reeds aanwezig in de vloot.");
             _schepen.Add(schip.Naam, schip);
         }
         public void VerwijderSchip(Schip schip)
         {
-            if (!_schepen.ContainsKey(schip.Naam)) throw new ArgumentOutOfRangeException("Schip bevindt zich niet in de vloot.");
+            if (!_schepen.ContainsKey(schip.Naam)) throw new VlootException("Schip bevindt zich niet in de vloot.");
             _schepen.Remove(schip.Naam);
-            // of if (!_schepen.Remove(schip.Naam)) throw new ArgumentOutOfRangeException("Schip bevindt zich niet in de vloot.");
+            // of if (!_schepen.Remove(schip.Naam)) throw new VlootException("Schip bevindt zich niet in de vloot.");
         }
 
         public bool BevatSchip(string naamSchip)
@@ -44,14 +44,8 @@ namespace GO5.Scheepvaart.Business
 
         public Schip ZoekSchip(string naamSchip)
         {
-            return _schepen[naamSchip];
-        }
-
-        public void VerplaatsSchip(string naamSchip, Vloot doelVloot)
-        {
-            Schip s = ZoekSchip(naamSchip);
-            doelVloot.VoegSchipToe(s);
-            VerwijderSchip(s);
+            if (!BevatSchip(naamSchip)) return null;
+            else return _schepen[naamSchip];
         }
     }
 }

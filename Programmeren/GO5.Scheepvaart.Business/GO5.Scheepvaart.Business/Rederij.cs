@@ -1,4 +1,4 @@
-﻿using System;
+﻿using GO5.Scheepvaart.Business.Exceptions;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -26,37 +26,33 @@ namespace GO5.Scheepvaart.Business
 
         public void VoegVlootToe(Vloot vloot)
         {
-            if (_vloten.ContainsKey(vloot.Naam)) throw new ArgumentOutOfRangeException("Vloot is reeds aanwezig in de rederij.");
+            if (_vloten.ContainsKey(vloot.Naam)) throw new RederijException("Vloot is reeds aanwezig in de rederij.");
             _vloten.Add(vloot.Naam, vloot);
         }
 
         public void VerwijderVloot(Vloot vloot)
         {
-            if (!_vloten.ContainsKey(vloot.Naam)) throw new ArgumentOutOfRangeException("Vloot bevindt zich niet in de rederij.");
+            if (!_vloten.ContainsKey(vloot.Naam)) throw new RederijException("Vloot bevindt zich niet in de rederij.");
             _vloten.Remove(vloot.Naam);
             // of if (!_vloten.Remove(vloot.Naam)) throw new ArgumentOutOfRangeException("Vloot bevindt zich niet in de rederij.");
         }
 
-        public Vloot ZoekVloot(string naamVloot)
-        {
-            if (_vloten.ContainsKey(naamVloot))
-            {
-                return _vloten[naamVloot];
-            }
-            else
-                throw new KeyNotFoundException("Vloot bevindt zich niet in de rederij.");
-        }
+        //public Vloot ZoekVloot(string naamVloot)
+        //{
+        //    if (!_vloten.ContainsKey(naamVloot)) throw new RederijException("Vloot bevindt zich niet in de rederij.");
+        //    return _vloten[naamVloot];
+        //}
 
         public void VoegHavenToe(string naamHaven)
         {
-            if (_actieveHavens.ContainsKey(naamHaven)) throw new ArgumentOutOfRangeException("Haven bestaat reeds in de lijst van actieve havens.");
+            if (_actieveHavens.ContainsKey(naamHaven)) throw new RederijException("Haven bestaat reeds in de lijst van actieve havens.");
             Haven nieuweHaven = new Haven(naamHaven);
             _actieveHavens.Add(naamHaven, nieuweHaven);
         }
 
         public void VerwijderHaven(string naamHaven)
         {
-            if (!_actieveHavens.ContainsKey(naamHaven)) throw new ArgumentOutOfRangeException("Haven bevindt zich niet in actieve havens.");
+            if (!_actieveHavens.ContainsKey(naamHaven)) throw new RederijException("Haven bevindt zich niet in actieve havens.");
             _actieveHavens.Remove(naamHaven);
         }
 
@@ -69,7 +65,21 @@ namespace GO5.Scheepvaart.Business
                     return vloot.Value.ZoekSchip(naam);
                 }
             }
-            throw new ArgumentOutOfRangeException("Het schip met naam '" + naam + "' bevindt zich niet in deze rederij.");
+            return null;
+        }
+
+        public void VerplaatsSchip(string schipNaam, string vlootNaam)
+        {
+            Schip s;
+            foreach (Vloot v in _vloten.Values)
+            {
+                s = v.ZoekSchip(schipNaam);
+                if (s != null)
+                {
+                    v.VerwijderSchip(s);
+                    _vloten[vlootNaam].VoegSchipToe(s);
+                }
+            }
         }
 
         public decimal GeefTotaleCargowaarde()
@@ -104,20 +114,22 @@ namespace GO5.Scheepvaart.Business
             return totaal;
         }
 
-        public List<double> GeefTonnagePerVloot()
+        public SortedDictionary<double, List<Vloot>> GeefTonnagePerVloot()
         {
-            List<double> output = new List<double>(_vloten.Count);
-            foreach (KeyValuePair<string, Vloot> vloot in _vloten)
+            // SortedDict sorteert op key
+            // List<Vloot> aangezien vloten identieke tonnage kunnen hebben
+            SortedDictionary<double, List<Vloot>> output = new SortedDictionary<double, List<Vloot>>();
+            if (_vloten.Count == 0) throw new RederijException("Geen vloten aanwezig in de rederij");
+            foreach (Vloot v in _vloten.Values)
             {
-                double totaalTonnage = 0.0;
-                foreach (Schip s in vloot.Value)
+                double tonnage = 0.0;
+                foreach (Schip s in v)
                 {
-                    totaalTonnage += s.Tonnage;
+                    tonnage += s.Tonnage;
+                    if (output.ContainsKey(tonnage)) output[tonnage].Add(v);    // check indien vloten zelfde tonnage hebben
+                    else { output.Add(tonnage, new List<Vloot>() { v }); }
                 }
-                output.Add(totaalTonnage);
             }
-            output.Sort();
-            output.Reverse();
             return output;
         }
 

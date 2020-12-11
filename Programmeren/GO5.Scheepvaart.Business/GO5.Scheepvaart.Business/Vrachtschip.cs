@@ -1,4 +1,4 @@
-﻿using System;
+﻿using GO5.Scheepvaart.Business.Exceptions;
 
 namespace GO5.Scheepvaart.Business
 {
@@ -8,7 +8,7 @@ namespace GO5.Scheepvaart.Business
         public Vrachtschip(string naam, double lengte, double breedte, double tonnage, decimal cargowaarde) :
             base(naam, lengte, breedte, tonnage)
         {
-            if (cargowaarde < 0m) throw new ArgumentOutOfRangeException("Cargowaarde moet groter dan of gelijk aan 0 zijn.");
+            if (cargowaarde < 0m) throw new SchipException("Cargowaarde moet groter dan of gelijk aan 0 zijn.");
             Cargowaarde = cargowaarde;
         }
     }
