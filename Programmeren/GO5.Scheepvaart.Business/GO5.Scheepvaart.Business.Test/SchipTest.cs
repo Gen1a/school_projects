@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using GO5.Scheepvaart.Business.Exceptions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
@@ -10,7 +11,7 @@ namespace GO5.Scheepvaart.Business.Test
     public class SchipTest
     {
         private Schip schip;
-        [TestMethod, ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [TestMethod, ExpectedException(typeof(SchipException))]
         public void MaakContainerschipAantalContainersKleinerDanNul()
         {
             schip = new Containerschip("Test", 1.0, 1.0, 1.0, -1, 1m);
@@ -27,7 +28,7 @@ namespace GO5.Scheepvaart.Business.Test
             schip = new Containerschip("Test", 1.0, 1.0, 1.0, 10, 1m);
             Assert.AreEqual(10, ((Containerschip)schip).AantalContainers);
         }
-        [TestMethod, ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [TestMethod, ExpectedException(typeof(SchipException))]
         public void MaakContainerschipCargowaardeKleinerDanNul()
         {
             schip = new Containerschip("Test", 1.0, 1.0, 1.0, 0, -1m);
@@ -44,7 +45,7 @@ namespace GO5.Scheepvaart.Business.Test
             schip = new Containerschip("Test", 1.0, 1.0, 1.0, 0, 1m);
             Assert.AreEqual(1m, ((Containerschip)schip).Cargowaarde);
         }
-        [TestMethod, ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [TestMethod, ExpectedException(typeof(SchipException))]
         public void MaakRoRoschipAantalAutosKleinerDanNul()
         {
             schip = new RoRoschip("Test", 1.0, 1.0, 1.0, -1, 1, 1m);
@@ -61,7 +62,7 @@ namespace GO5.Scheepvaart.Business.Test
             schip = new RoRoschip("Test", 1.0, 1.0, 1.0, 1, 1, 1m);
             Assert.AreEqual(1, ((RoRoschip)schip).AantalAutos);
         }
-        [TestMethod, ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [TestMethod, ExpectedException(typeof(SchipException))]
         public void MaakRoRoschipAantalTrucksKleinerDanNul()
         {
             schip = new RoRoschip("Test", 1.0, 1.0, 1.0, 1, -1, 1m);
@@ -78,7 +79,7 @@ namespace GO5.Scheepvaart.Business.Test
             schip = new RoRoschip("Test", 1.0, 1.0, 1.0, 1, 1, 1m);
             Assert.AreEqual(1, ((RoRoschip)schip).AantalTrucks);
         }
-        [TestMethod, ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [TestMethod, ExpectedException(typeof(SchipException))]
         public void MaakRoRoschipCargowaardeKleinerDanNul()
         {
             schip = new RoRoschip("Test", 1.0, 1.0, 1.0, 1, 1, -1m);
@@ -95,7 +96,7 @@ namespace GO5.Scheepvaart.Business.Test
             schip = new RoRoschip("Test", 1.0, 1.0, 1.0, 1, 1, 1m);
             Assert.AreEqual(1m, ((RoRoschip)schip).Cargowaarde);
         }
-        [TestMethod, ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [TestMethod, ExpectedException(typeof(HavenException))]
         public void MaakHavenGeenLegeNaam()
         {
             Haven haven = new Haven("");
@@ -106,13 +107,13 @@ namespace GO5.Scheepvaart.Business.Test
             Haven haven = new Haven("Gent");
             Assert.AreEqual("Gent", haven.Naam);
         }
-        [TestMethod, ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [TestMethod, ExpectedException(typeof(SchipException))]
         public void MaakCruiseschipGeenHavensInTraject()
         {
             Traject traject = new Traject();
             schip = new Cruiseschip("Test", 1.0, 1.0, 1.0, 1, traject);
         }
-        [TestMethod, ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [TestMethod, ExpectedException(typeof(SchipException))]
         public void MaakCruiseschipEenHavenInTraject()
         {
             Haven haven = new Haven("Gent");
@@ -133,13 +134,13 @@ namespace GO5.Scheepvaart.Business.Test
             schip = new Cruiseschip("Test", 1.0, 1.0, 1.0, 1, traject);
             Assert.AreEqual(3, ((Cruiseschip)schip).Traject.Count);
         }
-        [TestMethod, ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [TestMethod, ExpectedException(typeof(SchipException))]
         public void MaakVeerbootGeenHavensInTraject()
         {
             Traject traject = new Traject();
             schip = new Veerboot("Test", 1.0, 1.0, 1.0, 1, traject);
         }
-        [TestMethod, ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [TestMethod, ExpectedException(typeof(SchipException))]
         public void MaakVeerbootEenHavenInTraject()
         {
             Haven haven = new Haven("Gent");
@@ -147,7 +148,7 @@ namespace GO5.Scheepvaart.Business.Test
             traject.VoegToe(haven);
             schip = new Veerboot("Test", 1.0, 1.0, 1.0, 1, traject);
         }
-        [TestMethod, ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [TestMethod, ExpectedException(typeof(SchipException))]
         public void MaakVeerboot4HavensInTraject()
         {
             Haven haven = new Haven("Gent");
