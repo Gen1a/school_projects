@@ -29,11 +29,7 @@ namespace GO5.Scheepvaart.Business.ConsoleApp
             rederij.VoegVlootToe(vloot);
             rederij.VoegVlootToe(vloot1);
             rederij.VoegVlootToe(vloot2);
-            List<double> tonnage = rederij.GeefTonnagePerVloot();
-            foreach (double d in tonnage)
-            {
-                Console.WriteLine($"{d}");
-            }
+            //SortedDictionary<double, List<Vloot>> tonnages = rederij.GeefTonnagePerVloot();
             double test = rederij.GeefTotaalVolumeTankers();
             Console.WriteLine(test);
             //Console.WriteLine(rederij.GeefTotaleCargowaarde());
@@ -48,6 +44,12 @@ namespace GO5.Scheepvaart.Business.ConsoleApp
             {
                 Console.WriteLine(s.Naam);
             }
+            Traject traject1 = new Traject();
+            traject1.VoegToe(new Haven("Testhaven"));
+            traject1.VoegToe(new Haven("Testhaven2"));
+            Schip schip5 = new Cruiseschip("Cruisetest", 1.0, 1.0, 1.0, 20, traject1);
+            vloot.VoegSchipToe(schip5);
+            Console.WriteLine($"Passagiers: {rederij.GeefTotaalAantalPassagiers()}");
         }
     }
 }
