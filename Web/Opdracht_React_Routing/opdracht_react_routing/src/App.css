@@ -1,0 +1,16 @@
+#root {
+    padding: 10px;
+}
+
+hr {
+    margin-bottom: 15px;
+}
+
+li a {
+  text-decoration: none;
+}
+
+li a:hover {
+  color: #3662f1;
+  border-bottom: 1px solid #3662f1;
+}
