@@ -1,0 +1,8 @@
+{
+    "weatherapi": {
+        "baserequesturl" : "http://api.weatherapi.com/v1",
+        "currentendpoint" : "/current.json",
+        "forecastendpoint" : "/forecast.json",
+        "searchendpoint" : "/search.json"
+    }
+}
