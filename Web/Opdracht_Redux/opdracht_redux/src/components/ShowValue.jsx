@@ -26,14 +26,12 @@ const ShowValue = (props) => {
     const {counterState} = props;
 
     return (
-        <div style={{borderStyle: "solid", borderWidth: 4, padding: 10, margin: 10}}>
-            <h2>Show value</h2>
-            <p style={{fontWeight: 'bolder', fontSize: 24}}>{counterState.value}</p>
+        <div>
+            <p>Counter Value (using state and effect): {counterState.value}</p>
             <HookComponent />
         </div>
     )
 }
-
 
 const mapStateToProps = state => ({
     counterState: state.counter

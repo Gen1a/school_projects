@@ -17,16 +17,11 @@ const HookComponent = () => {
 
     return (
         <div>
-            <h2>Using Hooks</h2>
-            <p>{counterState.value}</p>
-            <button onClick={() => dispatch(addOne('One'))}>Add one element to array</button>
-            
-            { /*
-                VOEG HIER DE REMOVE LAST OF ARRAY ACTION TOE MET EEN BUTTON
-            */}
+            <p>Counter value (using hooks): {counterState.value}</p>
+            <h1>Array</h1>
+            <button onClick={() => dispatch(addOne('One'))}>Add 'One' to array</button>
             <button onClick={() => dispatch(removeLast())}>Remove last element of array</button>
-            <p>Array of one's: </p>
-            <p>{testState.join(', ')}</p>
+            <p>Array of one's: {testState.join(', ')}</p>
         </div>
     )
 }

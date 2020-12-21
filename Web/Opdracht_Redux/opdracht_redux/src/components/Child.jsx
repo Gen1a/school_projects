@@ -12,17 +12,16 @@ import ShowValue from './ShowValue';
 const Child = () => {
 
     return (
-        <div style={{borderStyle: "solid", borderWidth: 4, padding: 10, margin: 10}}>
-            <h2>Child</h2>
-            <button onClick={() => store.dispatch(incrementByValue(5)) }>Increment with five</button>
-
+        <div>
+            <p>Modify counter with value of 5</p>
+            <button onClick={() => store.dispatch(incrementByValue(5)) }>Increment with 5</button>
             {
                 /*
                     MAAK HIERONDER EEN BUTTON Decrement with five AAN EN MET ALS ACTIE
                     HET DISPATCHEN VAN DE AANGEMAAKTE decrementByValue ACTION MET WAARDE 5
                 */
             }
-            <button onClick={() => store.dispatch(decrementByValue(5)) }>Decrement with five</button>
+            <button onClick={() => store.dispatch(decrementByValue(5)) }>Decrement with 5</button>
             
             <ShowValue />
         </div>

@@ -12,11 +12,15 @@ const ReposList = () => {
 
     return (
         <div>
+            <h1>GitHub Repositories</h1>
             <button onClick={() => dispatch(fetchRepos())}>Fetch repos</button>
-            <p>Repositories: </p>
-            <ul>
-                {repos.map(r => <li key={r.id}>{r.name}</li>)}
-            </ul>
+            {repos.length > 0 ?
+                <div><p>Repositories:</p>
+                <ul>
+                    {repos.map(r => <li key={r.id}>{r.name}</li>)}
+                </ul></div> : 
+                <div></div>
+            }
         </div>
     )
 }
