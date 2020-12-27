@@ -1,0 +1,19 @@
+{
+  "name": "project_webshop",
+  "version": "1.0.0",
+  "description": "Project Webshop for Web 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webshop",
+    "mongodb",
+    "express",
+    "react",
+    "node",
+    "mern"
+  ],
+  "author": "Frederik De Brouwer",
+  "license": "ISC"
+}
