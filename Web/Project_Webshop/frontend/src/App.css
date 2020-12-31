@@ -1,0 +1,32 @@
+.App {
+    text-align: center;
+}
+
+.card-header {
+    text-align: center;
+    font-weight: bold;
+    padding: 0.5rem;
+}
+
+.card-title{
+    text-align: center;
+    font-weight: bold;
+}
+
+.card-body {
+    font-size: smaller;
+    padding: 1rem;
+}
+
+.card-footer {
+    display: flex;
+    padding: 0.75rem;
+}
+
+.product-price{
+    font-weight: 700;
+}
+
+.shopping-cart .card {
+    text-align: center;
+}
