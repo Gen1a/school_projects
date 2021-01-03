@@ -5,6 +5,8 @@ const cors = require('cors');
 const helmet = require('helmet');   // security best-practice (sets HTTP headers appropriately)
 const productRouter = require('./routes/product');  // import category router
 const orderRouter = require('./routes/order');  // import order router
+const userRouter = require('./routes/user');    // import user router
+const categoryRouter = require('./routes/category');    // import category router
 require('dotenv').config(); // now process.env has keys and values from .env file
 
 const app = express();
@@ -18,6 +20,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Define routes
 app.use('/products', productRouter);
 app.use('/order', orderRouter);
+app.use('/user', userRouter);
+app.use('/categories', categoryRouter);
 // Define fallback route
 app.get('*', (req, res) => {
     res.status(404).send('Invalid request');

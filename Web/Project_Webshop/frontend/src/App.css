@@ -2,7 +2,94 @@
     text-align: center;
 }
 
-.card-header {
+.header {
+    padding: 15px 20px 0px 20px;
+}
+
+.content {
+    padding: 0px 20px;
+}
+
+.footer {
+    position:fixed;
+    left:0;
+    bottom:0;
+    right:0;
+    max-height: 20px;
+    background-color: #212529;
+    color: #c0c0c0 !important;
+    font-size: smaller;
+}
+
+.footer a{
+    color: #c0c0c0;
+}
+
+.navbar-nav {
+    font-size: 1rem;
+}
+.nav-link {
+    font-weight: 600;
+    color: #ffffff!important;
+}
+
+ul.technologies li
+{
+    position: relative;
+    height: 2em;
+    color: #888;
+}
+
+ul.technologies li:before
+{
+    content: "";
+    display: inline-block;
+    height: 3em;
+    width: 1px;
+    background: #aaaa;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: -11px;
+    top: -0.4em;
+    z-index: -1;
+}
+
+ul.technologies:before
+{
+    content: "●";
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: -1em;
+    top: 0.1em;
+    color: #aaa;
+}
+
+ul.technologies:after
+{
+    content: "●";
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: -1em;
+    top: -1em;
+    color: #aaa;
+}
+
+.card-deck .card {
+    min-width: 8rem;
+}
+
+.card-deck .card-img-wrapper {
+    cursor: pointer;
+    background-color: #cccccc;
+}
+
+.card-deck .card-header{
+    cursor: pointer;
     text-align: center;
     font-weight: bold;
     padding: 0.5rem;
@@ -29,4 +116,10 @@
 
 .shopping-cart .card {
     text-align: center;
+}
+
+.input-validation-error {
+    color: red;
+    font-style: italic;
+    font-size: small;
 }

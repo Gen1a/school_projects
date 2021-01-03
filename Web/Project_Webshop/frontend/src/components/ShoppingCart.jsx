@@ -1,22 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
+import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 import { addProduct, removeProduct, removeAllProductsWithId } from '../store/cart/slice';
+import { formatPrice } from '../helpers/helpers';
 
 const ShoppingCart = () => {
     const dispatch = useDispatch();
     const cartState = useSelector(state => state.cart);
-    const {items, status} = cartState;
+    const {items, status, totalPrice } = cartState;
 
     return (
         <div className="shopping-cart">
-            <Container>
-                <h1>Winkelwagentje</h1>
+            <Container className="header">
+                <h1>Mijn winkelwagentje</h1>
+                <hr/>
             </Container>
             <Container>
                 {status === 'filled' ? 
@@ -40,7 +42,7 @@ const ShoppingCart = () => {
                                     <Button variant="dark" size="sm" onClick={() => dispatch(removeProduct(item, false))}>
                                         <img
                                             alt="remove one"
-                                            src="./images/circleMinus.svg"
+                                            src="/images/circleMinus.svg"
                                             width="24"
                                             height="24"
                                             className="d-inline-block align-top"/>
@@ -49,7 +51,7 @@ const ShoppingCart = () => {
                                     <Button variant="dark" size="sm" onClick={() => dispatch(addProduct(item))}>
                                         <img
                                             alt="add one"
-                                            src="./images/circlePlus.svg"
+                                            src="/images/circlePlus.svg"
                                             width="24"
                                             height="24"
                                             className="d-inline-block align-top"/>
@@ -59,40 +61,55 @@ const ShoppingCart = () => {
                                     <Button variant="danger" size="sm" onClick={() => dispatch(removeAllProductsWithId(item))}>
                                             <img
                                                 alt="remove all"
-                                                src="./images/trash.svg"
+                                                src="/images/trash.svg"
                                                 width="24"
                                                 height="24"
                                                 className="d-inline-block align-top"/>
                                     </Button>
                                 </Col>
                                 <Col md="1">
-                                    €{item.quantity * item.price}
+                                    <Card.Subtitle className="mt-2">{formatPrice(item.quantity * item.price)}</Card.Subtitle>
                                 </Col>
                             </Row>
                         </Card>
                     ) : 
                     <div>
                         <p>Er zijn geen artikelen aanwezig in je winkelwagentje.</p>
-                        <Link to="/products">
-                            <Button variant="success">
-                                    <img
-                                        alt="add to cart"
-                                        src="./images/arrowLeft.svg"
-                                        width="24"
-                                        height="24"
-                                        />
-                                    {' '}Verder winkelen
-                            </Button>
-                        </Link>
-                        
+                        <Button variant="success" href="/products">
+                            <img
+                                alt="add to cart"
+                                src="/images/arrowLeft.svg"
+                                width="24"
+                                height="24"
+                                />
+                            {' '}Verder winkelen
+                        </Button>
                     </div>
                 }
             </Container>
             <Container>
                 {status === 'filled' ? 
-                    <div className="text-right">
-                        Totaalbedrag
-                        <hr></hr>
+                    <div>
+                        <div className="text-right mt-3 pr-1">
+                            <h5>
+                                Totaalbedrag: 
+                                <Badge pill variant="success" className="ml-1">
+                                    {formatPrice(totalPrice)}
+                                </Badge>
+                            </h5>
+                            <hr></hr>
+                        </div>
+                        <div className="text-center mb-2">
+                        <Button variant="dark" size="lg" href="/checkout">
+                            Verder naar bestellen{' '}
+                            <img
+                                alt="bestellen"
+                                src="/images/arrowRight.svg"
+                                width="24"
+                                height="24"
+                                />
+                        </Button>
+                        </div>
                     </div>
                 : null}
             </Container>

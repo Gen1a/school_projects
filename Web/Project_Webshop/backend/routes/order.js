@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const orderController = require('../controllers/order');
-const { validateOrderID } = require('../middleware/validators');
+const { validateID } = require('../middleware/validators');
 
-/* GET home page. */
-router.get('/:id/products', validateOrderID, orderController.getAllProducts);
-router.get('/:id', validateOrderID, orderController.getOrderById);
+router.get('/:id/products', validateID, orderController.getAllProducts);
+router.get('/:id', validateID, orderController.getOrderById);
 router.post('/', orderController.createOrder);
 
 module.exports = router;

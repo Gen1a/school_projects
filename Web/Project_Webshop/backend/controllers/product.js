@@ -15,8 +15,13 @@ exports.getAllProducts = async (req, res) => {
     }
 }
 
-exports.getProductsById = async (ids) => {
-    const products = await Product.find({}).where('_id').in(ids);
+exports.getProductsById = async (orderLines) => {
+    const productIds = [];
+    // Retrieve product ids
+    for (let [key] of Object.entries(orderLines)) {
+        productIds.push(orderLines[key].product_id);
+    }
+    let products = await Product.find({}).where('_id').in(productIds);
 
     try {
         console.log('product query succesfully executed');

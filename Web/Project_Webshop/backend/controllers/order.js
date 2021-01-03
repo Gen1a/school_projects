@@ -1,6 +1,6 @@
 const Order = require('../models/Order');
 const { validationResult } = require('express-validator');
-const { getAllProducts } = require('./order-line');
+const { getAllProducts, addOrderLines } = require('./order-line');
 
 // READ REQUESTS
 exports.getOrderById = async (req, res) => {
@@ -50,8 +50,9 @@ exports.getAllProducts = async (req, res) => {
         else{
             // Call order-line controller
             const products = await getAllProducts(orderId);
+            products.total_price = orderId.total_price;
             console.log('order query succesfully executed');
-            res.json(products);
+            res.send(products);
         }
     } catch (err) {
         console.log(err);
@@ -61,25 +62,28 @@ exports.getAllProducts = async (req, res) => {
 
 // CREATE REQUESTS
 exports.createOrder = async (req, res) => {
-    const { customer_id, order_statuscode, date_created, total_price } = req.body;
+    const { customer_id, order_statuscode, date_created, total_price, items } = req.body;
 
     // Define id for new order
-    let maxId = await Order.countDocuments();
+    let maxOrderId = await Order.countDocuments();
 
     const newOrder = new Order({
-        _id: maxId + 1,
+        _id: maxOrderId + 1,
         customer_id: customer_id,
         order_statuscode: order_statuscode,
         date_created: date_created,
         total_price: total_price
     });
-    // Save new order
+    // Add new order to database
     try {
         await newOrder.save();
-        console.log('Order succesfully added to database');
-        res.json({order_id: maxId + 1});
+        console.log('new order succesfully added to database');
     } catch (err) {
         console.log(err.message);
         res.status(500).send(err.message);
     }
+    //  Add new order lines to database
+    await addOrderLines(items, maxOrderId + 1);
+    // Send new order id as response
+    res.json({order_id: maxOrderId + 1});
 }
