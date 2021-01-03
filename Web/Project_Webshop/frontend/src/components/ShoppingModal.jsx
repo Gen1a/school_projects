@@ -5,8 +5,6 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { hideModal } from '../store/shoppingmodal/slice';
 
-
-
 const ShoppingModal = () => {
     const history = useHistory();
     const dispatch = useDispatch();

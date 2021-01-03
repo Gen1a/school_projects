@@ -76,25 +76,23 @@ const Wishlist = () => {
                                 </Card>
                             </Col>)}
                     </CardDeck>
-                    
                     :
                     <div>
                         <p>Er zijn geen artikelen aanwezig op je verlanglijstje.</p>
                     </div>
                 }
-                <Container className="my-3 text-center">
-                    <hr/>
-                    <Button variant="success" href="/products">
-                        <img
-                            alt="add to cart"
-                            src="/images/arrowLeft.svg"
-                            width="24"
-                            height="24"
-                            />
-                        {' '}Verder winkelen
-                    </Button>
-                </Container>
-                
+            </Container>
+            <Container className="my-3 text-center">
+                <hr/>
+                <Button variant="success" href="/products">
+                    <img
+                        alt="add to cart"
+                        src="/images/arrowLeft.svg"
+                        width="24"
+                        height="24"
+                        />
+                    {' '}Verder winkelen
+                </Button>
             </Container>
         </div>
     )
